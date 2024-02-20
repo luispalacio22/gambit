@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"strconv"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/luispalacio22/gambit/bd"
 	"github.com/luispalacio22/gambit/models"
 )
