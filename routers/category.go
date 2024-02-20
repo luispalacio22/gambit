@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+	"strconv"
 
 	"github.com/luispalacio22/gambit/bd"
 	"github.com/luispalacio22/gambit/models"
@@ -26,4 +27,9 @@ func InsertCategory(body string, User string) (int, string) {
 		return 400, msg
 	}
 
+	result, err2 := bd.InsertCategory()
+	if err2 != nil {
+		return 400, "Ocurrio un error al intentar realizar el registo de la categoria" + t.CategName + " > " + err2.Error()
+	}
+	return 200, "{CategID: " + strconv.Itoa(int(result)) + "}"
 }
