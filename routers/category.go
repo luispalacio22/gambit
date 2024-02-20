@@ -28,7 +28,7 @@ func InsertCategory(body string, User string) (int, string) {
 		return 400, msg
 	}
 
-	result, err2 := bd.InsertCategory()
+	result, err2 := bd.InsertCategory(t)
 	if err2 != nil {
 		return 400, "Ocurrio un error al intentar realizar el registo de la categoria" + t.CategName + " > " + err2.Error()
 	}
